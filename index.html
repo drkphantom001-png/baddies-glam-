@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Baddies Glam — Makeup Artistry in Kano</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blush:#ffe1ee; --blush-deep:#ffc4dc; --rose:#ee6aa7; --rose-deep:#d13c85;
+    --plum:#4a2437; --gold:#e3a93f; --cream:#fff5fa; --line:rgba(209,60,133,0.22);
+    box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth; scroll-padding-top:env(safe-area-inset-top,0px);}
+  body{margin:0; background:linear-gradient(180deg,#fff5fa 0%,#ffe9f3 100%); background-attachment:fixed; color:var(--plum); font-family:'Jost',sans-serif; font-weight:300; line-height:1.6; -webkit-font-smoothing:antialiased;}
+  h1,h2,h3{font-family:'Cormorant Garamond',serif; font-weight:500; margin:0; color:var(--plum);}
+  a{color:inherit;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 28px;}
+  section{overflow-x:hidden;}
+
+  header{position:sticky; top:0; z-index:20; background:rgba(255,245,250,0.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); padding-top:env(safe-area-inset-top,0px);}
+  .navbar{display:flex; align-items:center; justify-content:space-between; padding:18px 28px; max-width:1080px; margin:0 auto;}
+  .logo{font-family:'Cormorant Garamond',serif; font-size:1.7rem;}
+  .logo em{font-family:'Great Vibes',cursive; font-style:normal; font-size:2rem; line-height:1; color:var(--rose-deep);}
+  nav{display:flex; gap:28px;}
+  nav a{text-decoration:none; font-size:0.95rem; color:var(--plum); opacity:0.75;}
+  nav a:hover{opacity:1;}
+
+  .hero{background:radial-gradient(circle at 12% 20%, rgba(255,255,255,0.75) 0, transparent 22%), radial-gradient(circle at 88% 75%, rgba(255,196,220,0.9) 0, transparent 30%), linear-gradient(180deg,#ffd3e6 0%,#ffeaf3 100%); padding:100px 0 110px; text-align:center;}
+  .hero .eyebrow{color:var(--rose-deep); font-size:0.95rem; margin-bottom:18px; font-style:italic;}
+  .hero .eyebrow::before,.hero .eyebrow::after{content:" ✦ "; color:var(--gold);}
+  .hero h1{font-size:clamp(2.6rem,6vw,4.2rem); line-height:1.08; max-width:780px; margin:0 auto;}
+  .hero h1 .accent{font-family:'Great Vibes',cursive; font-size:1.25em; color:var(--rose-deep);}
+  .hero p{max-width:520px; margin:26px auto 38px; font-size:1.08rem; opacity:0.85;}
+  .btn{display:inline-block; padding:15px 38px; border-radius:999px; background:linear-gradient(135deg,#ee6aa7,#d13c85); color:var(--cream); text-decoration:none; font-size:0.98rem; box-shadow:0 8px 22px rgba(209,60,133,0.28); border:1px solid transparent;}
+  .btn:hover{background:linear-gradient(135deg,#f27bb2,#dc4a90);}
+  .btn.ghost{background:rgba(255,255,255,0.7); color:var(--rose-deep); border:1px solid var(--rose-deep); box-shadow:none; margin-left:14px;}
+
+  .about{padding:90px 0; display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px; align-items:center;}
+  .about .mark{aspect-ratio:4/5; border-radius:220px 220px 26px 26px; background:linear-gradient(160deg,#ffc4dc,#ffe1ee); display:flex; align-items:center; justify-content:center; font-family:'Great Vibes',cursive; font-size:2.6rem; color:var(--rose-deep); border:2px solid #fff; box-shadow:0 14px 34px rgba(209,60,133,0.2);}
+  .about h2{font-size:2.2rem; margin-bottom:20px;}
+  .about h2::after{content:" ✦"; color:var(--gold); font-size:0.6em;}
+  .about p{opacity:0.85; margin-bottom:16px; max-width:52ch;}
+
+  .services{padding:80px 0; background:linear-gradient(180deg,#ffe1ee,#ffd3e6); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .services h2{text-align:center; font-size:2.2rem; margin-bottom:8px;}
+  .services h2::after{content:" ✦"; color:var(--gold); font-size:0.6em;}
+  .services .sub{text-align:center; opacity:0.75; margin-bottom:50px;}
+  .service-row{display:flex; justify-content:space-between; align-items:baseline; padding:26px 0; border-bottom:1px solid rgba(209,60,133,0.25); gap:20px;}
+  .service-row:first-child{border-top:1px solid rgba(209,60,133,0.25);}
+  .service-name{font-family:'Cormorant Garamond',serif; font-size:1.5rem; color:var(--rose-deep);}
+  .service-desc{opacity:0.75; font-size:0.92rem; margin-top:4px; max-width:46ch;}
+  .service-price{font-size:1rem; color:var(--rose-deep); white-space:nowrap; font-style:italic;}
+
+  .gallery{padding:90px 0;}
+  .gallery h2{text-align:center; font-size:2.2rem; margin-bottom:8px;}
+  .gallery h2::after{content:" ✦"; color:var(--gold); font-size:0.6em;}
+  .gallery .sub{text-align:center; opacity:0.75; margin-bottom:40px;}
+  .gal-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:16px;}
+  .gal-item{border-radius:16px; overflow:hidden; background:#fff; border:1px solid var(--line); box-shadow:0 8px 20px rgba(209,60,133,0.12);}
+  .gal-item img{width:100%; aspect-ratio:1; object-fit:cover; display:block;}
+  .gal-item .cap{padding:10px 12px; font-size:0.85rem; opacity:0.8;}
+  .gal-empty{text-align:center; opacity:0.6; font-style:italic; font-family:'Cormorant Garamond',serif; padding:30px;}
+
+  .booking{padding:90px 0;}
+  .booking-grid{display:grid; grid-template-columns:0.85fr 1.15fr; gap:56px;}
+  .booking h2{font-size:2.2rem; margin-bottom:18px;}
+  .booking h2::after{content:" ✦"; color:var(--gold); font-size:0.6em;}
+  .booking p{opacity:0.85; max-width:40ch; margin-bottom:20px;}
+  .booking .note{font-size:0.88rem; opacity:0.65; margin-top:24px;}
+  form{display:flex; flex-direction:column; gap:16px;}
+  .field label{display:block; font-size:0.85rem; margin-bottom:6px; opacity:0.75;}
+  .field input, .field select, .field textarea{width:100%; padding:13px 14px; border:1px solid rgba(209,60,133,0.25); border-radius:14px; background:#fff; color:var(--plum); font-family:'Jost',sans-serif; font-size:0.95rem;}
+  .field textarea{resize:vertical; min-height:80px;}
+  .field-row{display:flex; gap:14px;}
+  .field-row .field{flex:1;}
+  .submit-btn{align-self:flex-start; cursor:pointer; font-family:'Jost',sans-serif; border:none;}
+  .confirm{display:none; margin-top:18px; padding:16px; border:1px solid var(--line); background:#fff; border-radius:16px; font-size:0.92rem;}
+
+  #installBanner,#iosInstallBanner{display:none; background:#fff; border:1px solid var(--line); border-radius:16px; padding:14px 18px; margin-bottom:32px; font-size:0.9rem; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;}
+  #installBtn{padding:9px 20px; background:var(--rose-deep); color:var(--cream); border:1px solid var(--rose-deep); border-radius:999px; cursor:pointer; font-family:'Jost',sans-serif; font-size:0.85rem;}
+
+  footer{padding:56px 0 40px; text-align:center; border-top:1px solid var(--line); background:linear-gradient(180deg,transparent,#ffd3e6); padding-bottom:calc(40px + env(safe-area-inset-bottom,0px));}
+  footer .logo{display:block; margin-bottom:10px;}
+  footer .socials{display:flex; justify-content:center; gap:22px; margin:18px 0; font-size:0.92rem;}
+  footer .socials a{text-decoration:none; opacity:0.75;}
+  footer .socials a:hover{opacity:1;}
+  footer .fine{font-size:0.82rem; opacity:0.55;}
+
+  @media (max-width:760px){
+    nav{display:none;}
+    .about, .booking-grid{grid-template-columns:1fr;}
+    .about .mark{aspect-ratio:16/9;}
+    .field-row{flex-direction:column;}
+    .btn.ghost{margin-left:0; margin-top:12px; display:block;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="navbar">
+    <div class="logo">Baddies <em>Glam</em></div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#book">Book</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Makeup artistry, Kano</div>
+    <h1>Glam that feels <span class="accent">like you</span>, only softer</h1>
+    <p>Bridal, editorial, and everyday makeup crafted for your skin, your event, and your moment.</p>
+    <a href="#book" class="btn">Book Your Glam</a>
+    <a href="#services" class="btn ghost">See Services</a>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap" style="display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px; align-items:center;">
+    <div class="mark">Baddies Glam</div>
+    <div>
+      <h2>Where every face tells its own story</h2>
+      <p>Baddies Glam is a makeup studio built on the belief that glam should feel personal — soft where you need soft, bold where you want bold. Every look is tailored to your features, your skin tone, and the occasion.</p>
+      <p>From bridal parties to birthday shoots, we bring the kit to you or welcome you into the studio, whichever feels right for your day.</p>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <h2>Services</h2>
+    <p class="sub">Pricing is a guide — every face gets a proper consultation first.</p>
+    <div class="service-list" id="serviceList">
+      <p style="text-align:center; opacity:0.6;">Loading services…</p>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <h2>Our Work</h2>
+    <p class="sub">A look at some of our recent glam.</p>
+    <div class="gal-grid" id="galGrid">
+      <p style="text-align:center; opacity:0.6; grid-column:1/-1;">Loading gallery…</p>
+    </div>
+  </div>
+</section>
+
+<section class="booking" id="book">
+  <div class="wrap booking-grid">
+    <div>
+      <h2>Book an appointment</h2>
+      <p>Fill the form and we'll confirm your slot on WhatsApp. Please book at least 3 days ahead for bridal work.</p>
+      <p class="note">Serving Kano and available for travel within the state for bridal bookings.</p>
+    </div>
+    <div>
+      <form id="bookingForm">
+        <div class="field-row">
+          <div class="field"><label for="name">Full name</label><input type="text" id="name" required></div>
+          <div class="field"><label for="phone">Phone / WhatsApp number</label><input type="tel" id="phone" required></div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="service">Service</label>
+            <select id="service">
+              <option>Bridal Glam</option>
+              <option>Signature Glam</option>
+              <option>Photoshoot Makeup</option>
+              <option>Makeup Lessons</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="field"><label for="date">Preferred date</label><input type="date" id="date"></div>
+        </div>
+        <div class="field"><label for="message">Anything else we should know</label><textarea id="message" placeholder="Event type, location, look inspiration..."></textarea></div>
+        <button type="submit" class="btn submit-btn">Send Booking Request</button>
+      </form>
+      <div class="confirm" id="confirmMsg"></div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div id="installBanner">
+      <span>Add Baddies Glam to your home screen for quicker access.</span>
+      <button id="installBtn">Install</button>
+    </div>
+    <div id="iosInstallBanner" style="display:none; background:#fff; border:1px solid var(--line); border-radius:16px; padding:14px 18px; margin-bottom:32px; font-size:0.88rem;">
+      On iPhone: tap the <strong>Share</strong> icon, then choose <strong>Add to Home Screen</strong> to save Baddies Glam like an app.
+    </div>
+    <div class="logo">Baddies <em>Glam</em></div>
+    <div class="socials">
+      <a href="#">Instagram — add handle</a>
+      <a href="https://wa.me/2349161645015" target="_blank" rel="noopener">WhatsApp — +2349161645015</a>
+      <a href="#">TikTok — add handle</a>
+    </div>
+    <div class="fine">Kano, Nigeria · © 2026 Baddies Glam</div>
+  </div>
+</footer>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+<script>
+  // ====== PASTE YOUR FIREBASE CONFIG HERE (same object used in the studio dashboard) ======
+  const firebaseConfig = {
+    apiKey: "AIzaSyBIGeqCTtSRdQmCgCigb0yL2qAio0gDxNU",
+  authDomain: "baddies-glam.firebaseapp.com",
+  projectId: "baddies-glam",
+  storageBucket: "baddies-glam.firebasestorage.app",
+  messagingSenderId: "23026771816",
+  appId: "1:23026771816:web:a18a2670bf651a5b49d8dd"
+  };
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+
+  var WHATSAPP_NUMBER = "2349161645015";
+
+  // --- Live services ---
+  db.collection('services').orderBy('createdAt', 'asc').onSnapshot(function(snap){
+    var listEl = document.getElementById('serviceList');
+    if(snap.empty){
+      listEl.innerHTML = '<p style="text-align:center; opacity:0.6;">Services coming soon.</p>';
+      return;
+    }
+    listEl.innerHTML = snap.docs.map(function(doc){
+      var s = doc.data();
+      return '<div class="service-row">' +
+        '<div><div class="service-name">' + escapeHtml(s.name || '') + '</div>' +
+        (s.desc ? '<div class="service-desc">' + escapeHtml(s.desc) + '</div>' : '') + '</div>' +
+        '<div class="service-price">' + escapeHtml(s.price || '') + '</div></div>';
+    }).join('');
+  }, function(err){ console.error(err); });
+
+  // --- Live gallery ---
+  db.collection('portfolio').orderBy('createdAt', 'desc').onSnapshot(function(snap){
+    var grid = document.getElementById('galGrid');
+    if(snap.empty){
+      grid.innerHTML = '<div class="gal-empty" style="grid-column:1/-1;">Photos coming soon.</div>';
+      return;
+    }
+    grid.innerHTML = snap.docs.map(function(doc){
+      var p = doc.data();
+      return '<div class="gal-item"><img src="' + p.url + '" alt="' + escapeHtml(p.caption || '') + '">' +
+        (p.caption ? '<div class="cap">' + escapeHtml(p.caption) + '</div>' : '') + '</div>';
+    }).join('');
+  }, function(err){ console.error(err); });
+
+  function escapeHtml(str){
+    var d = document.createElement('div');
+    d.textContent = str;
+    return d.innerHTML;
+  }
+
+  // --- Booking form ---
+  document.getElementById('bookingForm').addEventListener('submit', async function(e){
+    e.preventDefault();
+    var name = document.getElementById('name').value.trim();
+    var phone = document.getElementById('phone').value.trim();
+    var service = document.getElementById('service').value;
+    var date = document.getElementById('date').value;
+    var message = document.getElementById('message').value.trim();
+
+    try{
+      await db.collection('bookings').add({
+        name: name, phone: phone, service: service, date: date, notes: message,
+        status: 'pending', createdAt: Date.now()
+      });
+    }catch(err){ console.error('Could not save booking to database', err); }
+
+    var text = "Hi Baddies Glam! I'd like to book an appointment.%0A" +
+      "Name: " + encodeURIComponent(name) + "%0A" +
+      "Phone: " + encodeURIComponent(phone) + "%0A" +
+      "Service: " + encodeURIComponent(service) +
+      (date ? "%0APreferred date: " + encodeURIComponent(date) : "") +
+      (message ? "%0ANotes: " + encodeURIComponent(message) : "");
+    var waLink = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + text;
+    var displayNumber = "+" + WHATSAPP_NUMBER;
+
+    var confirmBox = document.getElementById('confirmMsg');
+    confirmBox.style.display = 'block';
+    confirmBox.innerHTML =
+      'Thanks, ' + (name || 'there') + '! We\'re opening WhatsApp now to send your request — if it doesn\'t open, use the button below.<br><br>' +
+      '<a href="' + waLink + '" target="_blank" class="btn" style="display:inline-block; margin-bottom:10px;">Open WhatsApp to confirm →</a><br>' +
+      '<span style="font-size:0.85rem; opacity:0.7;">Trouble opening it? Message or call us directly at <strong>' + displayNumber + '</strong>.</span>';
+
+    window.open(waLink, '_blank');
+    e.target.reset();
+  });
+
+  // --- Install to home screen ---
+  var deferredInstallPrompt = null;
+  window.addEventListener('beforeinstallprompt', function(e){
+    e.preventDefault();
+    deferredInstallPrompt = e;
+    document.getElementById('installBanner').style.display = 'flex';
+  });
+  document.getElementById('installBtn').addEventListener('click', function(){
+    if(!deferredInstallPrompt) return;
+    deferredInstallPrompt.prompt();
+    deferredInstallPrompt.userChoice.finally(function(){
+      deferredInstallPrompt = null;
+      document.getElementById('installBanner').style.display = 'none';
+    });
+  });
+  window.addEventListener('appinstalled', function(){
+    document.getElementById('installBanner').style.display = 'none';
+  });
+  var isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  var isStandalone = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+  if(isIOS && !isStandalone){
+    document.getElementById('iosInstallBanner').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
